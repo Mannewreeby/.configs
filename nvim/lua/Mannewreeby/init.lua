@@ -1,0 +1,6 @@
+require("Mannewreeby.remaps")
+require("Mannewreeby.colorScheme")
+require("Mannewreeby.packer")
+require("Mannewreeby.set")
+require("Mannewreeby.undotree")
+require("Mannewreeby.colorTweeks")
