@@ -5,6 +5,14 @@
 -- Reserve a space in the gutter
 vim.opt.signcolumn = 'yes'
 
+local function toggle_diagnostic_float()
+    if vim.diagnostic.get(0) and #vim.diagnostic.get(0) > 0 then
+        vim.diagnostic.open_float({ scope = "cursor" })
+    end
+end
+
+
+
 
 vim.diagnostic.config({
     signs = true,
@@ -13,7 +21,7 @@ vim.diagnostic.config({
     severity_sort = true,
     float = {
         border = "rounded",
-        focusable = false,
+        focusable = true,
         prefix = '',
         scope = 'line',
         delay = 0, -- Set the delay before showing the diagnostic float window (in milliseconds)
@@ -48,7 +56,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set({ 'n', 'x' }, '<leader>s', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
         vim.keymap.set('n', '<leader>dn',
             '<cmd> lua vim.diagnostic.goto_next({severity = {min = vim.diagnostic.severity.WARN}})<CR>')
-        vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
+        vim.keymap.set('n', '<leader>e', toggle_diagnostic_float, { desc = 'Open diagnostic float' })
+        -- Move cursor into diagnostic popup
     end,
 })
 
@@ -60,6 +69,7 @@ require('lspconfig').gleam.setup({})
 require('lspconfig').ocamllsp.setup({})
 require('lspconfig').gopls.setup({})
 require('lspconfig').html.setup({})
+require('lspconfig').taplo.setup({})
 require('lspconfig').rust_analyzer.setup({})
 require 'lspconfig'.clangd.setup({
 

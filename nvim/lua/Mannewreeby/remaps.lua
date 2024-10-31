@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>ee", vim.cmd.Ex)
 vim.keymap.set("i", "jk", "<Esc>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -24,6 +23,8 @@ vim.keymap.set("n", '<leader>sh', function()
     vim.cmd.wincmd("j")
 end)
 
+-- Bind leader w to window management
+vim.keymap.set("n", "<leader>w", "<C-w>")
 
 -- Map Ctrl + t to switch to normal mode in terminal
 vim.api.nvim_set_keymap('t', '<C-t>', [[<C-\><C-n>]], { noremap = true, silent = true })

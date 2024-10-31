@@ -109,4 +109,20 @@ return require('packer').startup(function(use)
     use {
         "folke/which-key.nvim",
     }
+
+    use {
+        "axelvc/template-string.nvim",
+    }
+
+    -- Autotag plugin for auto-closing and auto-renaming tags
+    use {
+        'windwp/nvim-ts-autotag',
+        config = function()
+            require('nvim-ts-autotag').setup()
+        end
+    }
+
+    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end }
 end)

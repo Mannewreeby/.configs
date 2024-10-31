@@ -30,6 +30,7 @@ require('noice').setup({
             view_warn = "notify", -- view for warnings
             view_history = "messages", -- view for :messages
             view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
+            timeout = 5000
         },
         popupmenu = {
             enabled = true, -- enables the Noice popupmenu UI
