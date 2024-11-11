@@ -77,9 +77,13 @@ require 'lspconfig'.clangd.setup({
     cmd = { 'clangd', '--background-index', '--header-insertion=iwyu', '--clang-tidy', '--suggest-missing-includes', '--cross-file-rename' },
 
 })
-require('lspconfig').ts_ls.setup({
+require('lspconfig').ts_ls.setup({})
+require('lspconfig').eslint.setup({
+    -- Look for .eslintrc.js
+    root_dir = require('lspconfig/util').root_pattern('.eslintrc.js', '.eslintrc.json', '.eslintrc'),
+
+
 })
-require('lspconfig').eslint.setup({})
 require 'lspconfig'.lua_ls.setup {
     on_init = function(client)
         if client.workspace_folders then

@@ -20,7 +20,7 @@ require("nvim-tree").setup({
         group_empty = true,
     },
     filters = {
-        dotfiles = true,
+        dotfiles = false,
     },
     on_attach = function(bufnr)
         local api = require('nvim-tree.api')
@@ -42,4 +42,5 @@ require("nvim-tree").setup({
 
 vim.keymap.set("n", "<C-e>", ":NvimTreeFocus<cr>")
 vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<cr>")
+
 

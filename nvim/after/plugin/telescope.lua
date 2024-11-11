@@ -8,4 +8,4 @@ vim.keymap.set('n', 'gr', builtin.lsp_references, {})
 vim.keymap.set('n', '<leader>qf', '<cmd> Telescope quickfix<cr>')
 -- Show recent files
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
-
+vim.keymap.set('n', '<leader>bl', '<cmd> Telescope buffers<cr>', {})
