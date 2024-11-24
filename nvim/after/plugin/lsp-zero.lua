@@ -71,6 +71,7 @@ require('lspconfig').gopls.setup({})
 require('lspconfig').html.setup({})
 require('lspconfig').taplo.setup({})
 require('lspconfig').rust_analyzer.setup({})
+require('lspconfig').graphql.setup({})
 require 'lspconfig'.clangd.setup({
 
     -- Set std=c++17
@@ -80,9 +81,7 @@ require 'lspconfig'.clangd.setup({
 require('lspconfig').ts_ls.setup({})
 require('lspconfig').eslint.setup({
     -- Look for .eslintrc.js
-    root_dir = require('lspconfig/util').root_pattern('.eslintrc.js', '.eslintrc.json', '.eslintrc'),
-
-
+    root_dir = require('lspconfig/util').root_pattern('.eslintrc.js', '.eslintrc.json', '.eslintrc', 'package.json'),
 })
 require 'lspconfig'.lua_ls.setup {
     on_init = function(client)

@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
-        -- or                            , branch = '0.1.x',
+        -- or                            , branch = '0.1.x,
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
@@ -125,4 +125,7 @@ return require('packer').startup(function(use)
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end }
+
+    use 'kiyoon/magick.nvim'
+    use '3rd/image.nvim'
 end)
