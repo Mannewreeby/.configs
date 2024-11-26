@@ -102,9 +102,6 @@ return require('packer').startup(function(use)
             -- OR 'ibhagwan/fzf-lua',
             'nvim-tree/nvim-web-devicons',
         },
-        config = function()
-            require "octo".setup()
-        end
     }
     use {
         "folke/which-key.nvim",
