@@ -28,13 +28,7 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'         -- Snippet engine
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
-    use {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        config = function()
-            require("nvim-autopairs").setup {}
-        end
-    }
+    use "windwp/nvim-autopairs"
     use {
         "folke/noice.nvim",
         config = function()
@@ -125,4 +119,23 @@ return require('packer').startup(function(use)
 
     use 'kiyoon/magick.nvim'
     use '3rd/image.nvim'
+
+    use {
+        '3rd/time-tracker.nvim',
+        requires = {
+            '3rd/sqlite.nvim'
+        },
+    }
+
+    use 'mfussenegger/nvim-dap'
+
+    -- Trouble plugin
+    use "folke/trouble.nvim"
+
+    use "yorickpeterse/nvim-window"
+
+    use "folke/zen-mode.nvim"
+
+    use { 'echasnovski/mini.indentscope', version = false }
+
 end)

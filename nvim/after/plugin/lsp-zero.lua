@@ -65,6 +65,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 -- These are example language servers.
 
+require('lspconfig').biome.setup({
+    -- Only setup for json
+    filetypes = { 'json' },
+})
 require('lspconfig').gleam.setup({})
 require('lspconfig').ocamllsp.setup({})
 require('lspconfig').gopls.setup({})
