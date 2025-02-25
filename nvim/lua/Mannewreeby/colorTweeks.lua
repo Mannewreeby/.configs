@@ -1,6 +1,9 @@
 -- Set custom highlight groups for Telescope and Visual
 vim.cmd [[highlight TelescopePreviewLine guifg=#ffffff guibg=#FFAA00 ]]
 vim.cmd [[highlight Visual guifg=#000000 guibg=#FFAA00 gui=NONE]]
+vim.cmd [[highlight CmpItemAbbrMatch ctermbg=none guibg=none]]
+vim.cmd [[highlight LspReferenceText guifg=none guibg=none gui=NONE]]
+vim.cmd [[highlight SnippetTabstop guifg=none guibg=none gui=NONE]] 
 
 -- Highlight yanked text
 vim.api.nvim_exec2([[
@@ -11,18 +14,18 @@ augroup END]], {})
 
 
 -- Change the color of the line numbers
-vim.cmd([[ 
+vim.cmd([[
     highlight LineNr guifg=#647181
     highlight CursorLineNr guifg=#00FF00
 ]])
 
 -- Add line marking
 vim.opt.cursorline = true
-vim.cmd([[ 
+vim.cmd([[
     highlight CursorLine guibg=#2E3440
 ]])
 
 -- Change color of active line number
-vim.cmd([[ 
+vim.cmd([[
     highlight CursorLineNr guifg=#F3B172
 ]])

@@ -4,14 +4,14 @@ require("zen-mode").setup({
         width = 0.5,           -- Width of the Zen window
         options = {
             signcolumn = "no", -- Hide the sign column
-            cursorline = false, -- Disable cursorline
+            cursorline = true, -- Disable cursorline
         },
     },
     plugins = {
         options = {
             enabled = true,
             ruler = false,          -- Hide ruler
-            showcmd = false,        -- Hide command input
+            showcmd = true,        -- Hide command input
             laststatus = 0,         -- Hide status line
         },
         twilight = { enabled = false }, -- Disable Twilight plugin (if installed)

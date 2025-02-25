@@ -50,7 +50,13 @@ vim.opt.scrolloff = 20
 vim.o.fillchars = "eob: "
 
 vim.api.nvim_create_user_command("Cppath", function()
+    -- Copy the file path relative to the project repository root to the clipboard, fallback to relative path
+
     local path = vim.fn.expand("%:p")
-    vim.fn.setreg("+", path)
-    vim.notify('Copied "' .. path .. '" to the clipboard!')
+    local project_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+
+    if project_root == "" then
+        vim.fn.setreg("+", path)
+    end
+     vim.fn.setreg("+", path:gsub(project_root, ""))
 end, {})

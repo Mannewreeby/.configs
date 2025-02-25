@@ -9,7 +9,7 @@ require('mini.indentscope').setup({
 
 -- Disable for specific file types
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "help", "dashboard", "lazy", "NvimTree", "TelescopePrompt", "alpha" },
+    pattern = { "help", "dashboard", "lazy", "NvimTree", "TelescopePrompt", "alpha", "terminal" },
     callback = function()
         vim.b.miniindentscope_disable = true
     end,

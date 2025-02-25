@@ -1,4 +1,3 @@
-
 vim.g.VM_Maps = {
     ['Add Cursor At Beginning of Lines'] = 'A'
 }

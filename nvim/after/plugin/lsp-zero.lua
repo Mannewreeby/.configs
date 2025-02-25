@@ -76,6 +76,7 @@ require('lspconfig').html.setup({})
 require('lspconfig').taplo.setup({})
 require('lspconfig').rust_analyzer.setup({})
 require('lspconfig').graphql.setup({})
+require('lspconfig').pylsp.setup({})
 require 'lspconfig'.clangd.setup({
 
     -- Set std=c++17
@@ -123,6 +124,9 @@ local cmp = require('cmp')
 cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
+    },
+     completion = {
+      winhighlight = "Normal:Pmenu,CursorLine:PmenuSel,Search:None",  -- Customize the highlights
     },
     snippet = {
         expand = function(args)

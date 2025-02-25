@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
     use 'Shatur/neovim-ayu'
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use 'nvim-treesitter/playground'
     use('nvim-treesitter/nvim-treesitter-context')
     use 'ThePrimeagen/harpoon'
     use('neovim/nvim-lspconfig')
@@ -138,4 +139,5 @@ return require('packer').startup(function(use)
 
     use { 'echasnovski/mini.indentscope', version = false }
 
+    use { 'nvim-orgmode/orgmode' }
 end)
