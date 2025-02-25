@@ -140,4 +140,7 @@ return require('packer').startup(function(use)
     use { 'echasnovski/mini.indentscope', version = false }
 
     use { 'nvim-orgmode/orgmode' }
+
+    -- nvim-notify
+    use 'rcarriga/nvim-notify'
 end)
