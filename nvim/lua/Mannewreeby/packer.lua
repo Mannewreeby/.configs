@@ -143,4 +143,21 @@ return require('packer').startup(function(use)
 
     -- nvim-notify
     use 'rcarriga/nvim-notify'
+
+    use({
+        "olimorris/codecompanion.nvim",
+        config = function()
+            require("codecompanion").setup()
+        end,
+        init=function()
+            require("plugins.codecompanion.fidget-spinner"):init()
+        end,
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "j-hui/fidget.nvim"
+        }
+    })
+
+    use "MeanderingProgrammer/render-markdown.nvim"
 end)

@@ -35,3 +35,10 @@ vim.keymap.set('n', '<leader>oo', ':only<CR>')
 
 -- Copy active file path to clipboard
 vim.keymap.set('n', '<leader>cp', ':let @+=expand("%")<CR>')
+
+
+-- Command mode arrow key navigation
+vim.keymap.set('c', '<Up>', '<C-p>', { noremap = true })
+vim.keymap.set('c', '<Down>', '<C-n>', { noremap = true })
+
+
