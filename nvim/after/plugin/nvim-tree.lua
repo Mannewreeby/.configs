@@ -10,6 +10,7 @@ require("nvim-tree").setup({
     git = {
         enable = true,
         ignore = true,
+        timeout = 5000,
     },
     update_focused_file = {
         enable = true,
@@ -46,11 +47,10 @@ require("nvim-tree").setup({
         vim.keymap.set('n', 'a', api.fs.create, opts('Create New File'))
         vim.keymap.set('n', 'D', api.fs.remove, opts('Delete File'))
         vim.keymap.set('n', 'r', api.fs.rename, opts('Rename File'))
-
-    end,
+        vim.keymap.set('n', '<C-h>', api.tree.change_root_to_parent, opts("Up"))
+        vim.keymap.set('n', '<C-l>', api.tree.change_root_to_node, opts('CD'))
+    end
 })
 
 vim.keymap.set("n", "<C-e>", ":NvimTreeFocus<cr>")
 vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<cr>")
-
-
